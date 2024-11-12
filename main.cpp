@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <iostream>
+#include <fstream>
 #include <vector>
 using namespace std;
 
@@ -191,6 +192,41 @@ class Physics_Student:public Student{
 };
 
 int main(){
+    srand(time(0));
+    vector <Art_Student*> art_students;
+    vector <Physics_Student*> physics_students;
+    for (int i = 0; i < 5; i++)
+    {
+        art_students.push_back(new Art_Student);
+        physics_students.push_back(new Physics_Student);
+    }
+    for (int i = 0; i < art_students.size(); i++)
+    {
+        double gpa = rand()%5;
+        art_students[i]->setGPA(gpa);
+        physics_students[i]->setGPA(gpa);
+        int gradyear = 2025 + rand()%10;
+        art_students[i]->setGradYear(gradyear);
+        physics_students[i]->setGradYear(gradyear);
+        int enrolledyear = 2000 + rand()%20;
+        art_students[i]->setEnrolledYear(enrolledyear);
+        physics_students[i]->setEnrolledYear(enrolledyear);
+        int artemp = 1 + rand()%3;
+        art_students[i]->setArtEmphasis(artemp);
+        int con = 1 + rand()%2;
+        physics_students[i]->setConcentration(con);
+    }
+    std::ofstream outfile("Students.txt");
+    for (int i = 0; i < art_students.size(); i++)
+    {
+        outfile<<"Student "<<art_students[i]->getArtEmphasis()<<endl;
+    }
+    for (int i = 0; i < physics_students.size(); i++)
+    {
+        outfile<<"Student "<<physics_students[i]->getConcentration()<<endl;
+    }
+    
+    outfile.close();
     
     
     return 0;
