@@ -1,70 +1,80 @@
-Student FNAME1 LNAME
-Art Emphasis: Art History
-GPA: 0.789227
-Graduation Year: 2026
+Student 1
+Student FNAME LNAME
+GPA: 4.15007
+Graduation Year: 2032
 Graduation Semester: Spring
-Enrolled: Fall 2010
+Enrolled Year: 2002
+Enrolled Semester: Fall
 Graduate: No
-Student FNAME2 LNAME
-Art Emphasis: Art History
-GPA: 2.7519
+Student 2
+Student FNAME LNAME
+GPA: 3.67997
+Graduation Year: 2032
+Graduation Semester: Spring
+Enrolled Year: 2018
+Enrolled Semester: Fall
+Graduate: No
+Student 3
+Student FNAME LNAME
+GPA: 5.54943
+Graduation Year: 2033
+Graduation Semester: Spring
+Enrolled Year: 2013
+Enrolled Semester: Fall
+Graduate: No
+Student 4
+Student FNAME LNAME
+GPA: 3.24529
+Graduation Year: 2033
+Graduation Semester: Spring
+Enrolled Year: 2011
+Enrolled Semester: Fall
+Graduate: No
+Student 5
+Student FNAME LNAME
+GPA: 4.95981
 Graduation Year: 2029
 Graduation Semester: Spring
-Enrolled: Fall 2001
+Enrolled Year: 2002
+Enrolled Semester: Fall
 Graduate: No
-Student FNAME3 LNAME
-Art Emphasis: Art History
-GPA: 1.31376
-Graduation Year: 2030
+Student 1
+Student FNAME LNAME
+GPA: 4.15007
+Graduation Year: 2032
 Graduation Semester: Spring
-Enrolled: Fall 2013
+Enrolled Year: 2002
+Enrolled Semester: Fall
 Graduate: No
-Student FNAME4 LNAME
-Art Emphasis: Art Studio
-GPA: 4.07319
-Graduation Year: 2031
+Student 2
+Student FNAME LNAME
+GPA: 3.67997
+Graduation Year: 2032
 Graduation Semester: Spring
-Enrolled: Fall 2014
+Enrolled Year: 2018
+Enrolled Semester: Fall
 Graduate: No
-Student FNAME5 LNAME
-Art Emphasis: Art Education
-GPA: 5.60816
-Graduation Year: 2031
+Student 3
+Student FNAME LNAME
+GPA: 5.54943
+Graduation Year: 2033
 Graduation Semester: Spring
-Enrolled: Fall 2000
+Enrolled Year: 2013
+Enrolled Semester: Fall
 Graduate: No
-Student FNAME1 LNAME
-Art Emphasis: Biophysics
-GPA: 0.789227
-Graduation Year: 2026
+Student 4
+Student FNAME LNAME
+GPA: 3.24529
+Graduation Year: 2033
 Graduation Semester: Spring
-Enrolled: Fall 2010
+Enrolled Year: 2011
+Enrolled Semester: Fall
 Graduate: No
-Student FNAME2 LNAME
-Art Emphasis: Earth and Planetary Sciences
-GPA: 2.7519
+Student 5
+Student FNAME LNAME
+GPA: 4.95981
 Graduation Year: 2029
 Graduation Semester: Spring
-Enrolled: Fall 2001
-Graduate: No
-Student FNAME3 LNAME
-Art Emphasis: Biophysics
-GPA: 1.31376
-Graduation Year: 2030
-Graduation Semester: Spring
-Enrolled: Fall 2013
-Graduate: No
-Student FNAME4 LNAME
-Art Emphasis: Earth and Planetary Sciences
-GPA: 4.07319
-Graduation Year: 2031
-Graduation Semester: Spring
-Enrolled: Fall 2014
-Graduate: No
-Student FNAME5 LNAME
-Art Emphasis: Earth and Planetary Sciences
-GPA: 5.60816
-Graduation Year: 2031
-Graduation Semester: Spring
-Enrolled: Fall 2000
+Enrolled Year: 2002
+Enrolled Semester: Fall
 Graduate: No

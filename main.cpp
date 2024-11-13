@@ -112,11 +112,6 @@ class Student{
             }
             
         }
-        /* test of getting a vector Student to print. Did not work or compile.
-        Student printStudent(Student &student){
-            Student s = student;
-            cout<<s<<endl;
-        }*/
         ~Student(){};
 };
 
@@ -194,9 +189,17 @@ class Physics_Student:public Student{
 };
 
 int main(){
+    /*
+    Art_Student a;
+    cout<<a<<endl;
+
+    vector<Art_Student*> art_students;
+    art_students.push_back(new Art_Student);
+    cout<<*art_students[0]<<endl;
+    */
     srand(time(0));
     uniform_real_distribution<double> zero_to_six(0,6);
-    default_random_engine re;
+    default_random_engine re(time(0));
     auto gpa_set = bind(zero_to_six,re);
     vector <Art_Student*> art_students;
     vector <Physics_Student*> physics_students;
@@ -207,7 +210,7 @@ int main(){
     }
     for (int i = 0; i < art_students.size(); i++)
     {
-        double gpa = gpa_set();
+        double gpa = gpa_set();//(rand()%500)/100.00;
         art_students[i]->setGPA(gpa);
         physics_students[i]->setGPA(gpa);
         int gradyear = 2025 + rand()%10;
@@ -224,23 +227,23 @@ int main(){
     std::ofstream outfile("Students.txt");
     for (int i = 0; i < art_students.size(); i++)
     {
-        outfile <<"Student "<<art_students[i]->getFirstName()<<i+1<<" "<<art_students[i]->getLastName()<<endl
+        outfile <<"Student "<<i+1<<endl<<*art_students[i];/*<<"Student "<<art_students[i]->getFirstName()<<i+1<<" "<<art_students[i]->getLastName()<<endl
                 <<"Art Emphasis: "<<art_students[i]->getArtEmphasis()<<endl
                 <<"GPA: "<<art_students[i]->getGPA()<<endl
                 <<"Graduation Year: "<<art_students[i]->getGradYear()<<endl
                 <<"Graduation Semester: "<<art_students[i]->getGradSemester()<<endl
                 <<"Enrolled: "<<art_students[i]->getEnrolledSemester()<<" "<<art_students[i]->getEnrolledYear()<<endl
-                <<"Graduate: "<<art_students[i]->getIsGraduate()<<endl;
+                <<"Graduate: "<<art_students[i]->getIsGraduate()<<endl;*/
     }
     for (int i = 0; i < physics_students.size(); i++)
     {
-        outfile <<"Student "<<physics_students[i]->getFirstName()<<i+1<<" "<<physics_students[i]->getLastName()<<endl
+        outfile <<"Student "<<i+1<<endl<<*physics_students[i];/*<<"Student "<<physics_students[i]->getFirstName()<<i+1<<" "<<physics_students[i]->getLastName()<<endl
                 <<"Art Emphasis: "<<physics_students[i]->getConcentration()<<endl
                 <<"GPA: "<<physics_students[i]->getGPA()<<endl
                 <<"Graduation Year: "<<physics_students[i]->getGradYear()<<endl
                 <<"Graduation Semester: "<<physics_students[i]->getGradSemester()<<endl
                 <<"Enrolled: "<<physics_students[i]->getEnrolledSemester()<<" "<<physics_students[i]->getEnrolledYear()<<endl
-                <<"Graduate: "<<physics_students[i]->getIsGraduate()<<endl;
+                <<"Graduate: "<<physics_students[i]->getIsGraduate()<<endl;*/
     }
     
     outfile.close();
