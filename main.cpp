@@ -4,6 +4,8 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <random>
+#include <functional>
 using namespace std;
 
 class Student{
@@ -193,6 +195,9 @@ class Physics_Student:public Student{
 
 int main(){
     srand(time(0));
+    uniform_real_distribution<double> zero_to_six(0,6);
+    default_random_engine re;
+    auto gpa_set = bind(zero_to_six,re);
     vector <Art_Student*> art_students;
     vector <Physics_Student*> physics_students;
     for (int i = 0; i < 5; i++)
@@ -202,7 +207,7 @@ int main(){
     }
     for (int i = 0; i < art_students.size(); i++)
     {
-        double gpa = rand()%5;
+        double gpa = gpa_set();
         art_students[i]->setGPA(gpa);
         physics_students[i]->setGPA(gpa);
         int gradyear = 2025 + rand()%10;
@@ -219,11 +224,23 @@ int main(){
     std::ofstream outfile("Students.txt");
     for (int i = 0; i < art_students.size(); i++)
     {
-        outfile<<"Student "<<art_students[i]->getArtEmphasis()<<endl;
+        outfile <<"Student "<<art_students[i]->getFirstName()<<i+1<<" "<<art_students[i]->getLastName()<<endl
+                <<"Art Emphasis: "<<art_students[i]->getArtEmphasis()<<endl
+                <<"GPA: "<<art_students[i]->getGPA()<<endl
+                <<"Graduation Year: "<<art_students[i]->getGradYear()<<endl
+                <<"Graduation Semester: "<<art_students[i]->getGradSemester()<<endl
+                <<"Enrolled: "<<art_students[i]->getEnrolledSemester()<<" "<<art_students[i]->getEnrolledYear()<<endl
+                <<"Graduate: "<<art_students[i]->getIsGraduate()<<endl;
     }
     for (int i = 0; i < physics_students.size(); i++)
     {
-        outfile<<"Student "<<physics_students[i]->getConcentration()<<endl;
+        outfile <<"Student "<<physics_students[i]->getFirstName()<<i+1<<" "<<physics_students[i]->getLastName()<<endl
+                <<"Art Emphasis: "<<physics_students[i]->getConcentration()<<endl
+                <<"GPA: "<<physics_students[i]->getGPA()<<endl
+                <<"Graduation Year: "<<physics_students[i]->getGradYear()<<endl
+                <<"Graduation Semester: "<<physics_students[i]->getGradSemester()<<endl
+                <<"Enrolled: "<<physics_students[i]->getEnrolledSemester()<<" "<<physics_students[i]->getEnrolledYear()<<endl
+                <<"Graduate: "<<physics_students[i]->getIsGraduate()<<endl;
     }
     
     outfile.close();
